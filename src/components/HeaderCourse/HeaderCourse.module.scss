@@ -1,0 +1,25 @@
+@use "../_styles/colors";
+@use "../_styles/mixins" as mixins;
+@use "../_styles/default";
+@use "../_styles/fonts";
+
+.block {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--accent-secondary);
+    color: var(--text-normal);
+}
+.date {
+    font-family: Caslon;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.box {
+    display: flex;
+    justify-content: center;
+}

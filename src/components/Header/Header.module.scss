@@ -1,0 +1,13 @@
+@use "../_styles/colors";
+@use "../_styles/mixins" as mixins;
+@use "../_styles/default";
+@use "../_styles/fonts";
+
+.title {
+    font-family: Caslon;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--text-normal);
+    display: flex;
+    justify-content: center;
+}

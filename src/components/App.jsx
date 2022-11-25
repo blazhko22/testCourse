@@ -4,6 +4,7 @@ import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 // import {fetchConvert} from "../servise/fetchApi"
+import s from './App.module.scss'
 
 export const App = () => {
   
@@ -26,7 +27,7 @@ export const App = () => {
 // }, []);
 
   return (
-    <div>
+    <div className={s.box}>
       <Header />
       <Main />
       <Footer />

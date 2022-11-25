@@ -1,15 +1,14 @@
 import React from 'react';
-import CurrentCourse from 'components/CurrentCourse';
+import HeaderCourse from 'components/HeaderCourse';
+import s from './Header.module.scss';
 
 function Header() {
     return (
-        <header>
-            <section>
-                <div>
-                    <h1>Конвертер Валют</h1>
-                    <CurrentCourse/>
-                </div>
-            </section>
+        <header className={s.header}>
+            <div className={s.block}>
+                <h1 className={s.title}>Конвертер валют в Україні</h1>
+                <HeaderCourse />
+            </div>
         </header>
     );
 }
