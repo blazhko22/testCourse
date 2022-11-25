@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { apiUSD, apiEUR } from '../../servise/fetchApi';
+import Moment from 'moment';
 import s from './HeaderCourse.module.scss';
 
 function CurrentCourse() {
-
+    const date = Moment().format('DD-MM-YYYY');
+    
     const [currencyUSD, setCurrencyUSD] = useState([]);
     const [currencyEUR, setCurrencyEUR] = useState([]);
 
@@ -27,9 +29,12 @@ function CurrentCourse() {
     }, [])
     return (
         <div className={s.block}> 
-            {currencyUSD.map(item => (                                               
+            <span className={s.date}>
+                На {date} р.
+            </span>
+            {/* {currencyUSD.map(item => (                                               
                 <span key={item.r030} className={s.date}>На {item.exchangedate} р.</span>   
-            ))}             
+            ))}              */}
             {currencyUSD.map(item => (                                               
                 <div key={item.r030} className={s.box}>
                     <p className={s.name}>{item.txt}</p>

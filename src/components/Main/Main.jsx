@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { apiAll } from 'servise/fetchApi';
 import CourseConvert from '../CourseConvert';
-import s from './Main.module.scss'
+import s from './Main.module.scss';
 
 function Main() {
     const [valueBase, setValueBase] = useState([]);
@@ -31,7 +31,13 @@ function Main() {
                 cc: "UAH",
                 exchangedate: "",
             });
-            setSecondInput(res[0]);
+            setSecondInput({
+                r030: 0,
+                txt: "Українська гривня",
+                rate: 1,
+                cc: "UAH",
+                exchangedate: "",
+            });
         })
         .catch((error) => alert(error));
     }, []);
@@ -75,7 +81,7 @@ function Main() {
                             setFirstInput(valueBase.filter((cur) => cur.cc === e.target.value)[0])
                         }
                         valueSelect={firstInput.cc}
-                        data={valueBase}
+                        value={valueBase}
                     />
                     <CourseConvert
                         valueImput={secondAmount}
@@ -84,7 +90,7 @@ function Main() {
                             setSecondInput(valueBase.filter((cur) => cur.cc === e.target.value)[0]);
                         }}
                         valueSelect={secondInput.cc}
-                        data={valueBase}
+                        value={valueBase}
                     />
                 </div>
             </section>
